@@ -1,5 +1,6 @@
 # @nonsugarless/webp-converter
 "@nonsugarless/webp-converter" is the wrapper of [webp-converter](https://www.npmjs.com/package/webp-converter) that allows you convert and delete WebP Images more easily.
+[![Build Status](https://travis-ci.org/nonsugarless/webp-converter.svg?branch=master)](https://travis-ci.org/nonsugarless/webp-converter)
 
 # Features
 You can convert images to WebP Images and delete unnecessary WebP Images automatically.
@@ -59,3 +60,4 @@ You can use an optional configuration `.webpconverter` file in JSON or YAML form
 
 # License
 [MIT](https://en.wikipedia.org/wiki/MIT_License)
+
