@@ -45,7 +45,7 @@
       }
     },
     "testMatch": [
-      "**/tests/**/*.test.ts"
+      "**/*.test.ts"
     ]
   },
   "license": "MIT",

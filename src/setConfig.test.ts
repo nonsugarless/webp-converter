@@ -1,6 +1,6 @@
 import path from "path";
-import getConfig from "../getConfig";
-import setConfig from "../setConfig";
+import getConfig from "./getConfig";
+import setConfig from "./setConfig";
 
 describe("outer", () => {
   test("valid optional config1", async () => {
@@ -12,13 +12,13 @@ describe("outer", () => {
       excludeFileNames: ["apple-touch-icon.png"],
       excludeDirNames: [],
       webpConverterOption: "-q 85",
-      webpConverterGifOption: "-q 85"
+      webpConverterGifOption: "-q 85",
     });
   });
 
   test("valid optional config2", async () => {
     await expect(
-      setConfig(getConfig("src/tests/test2"))
+      setConfig(getConfig("src/configTests/test2"))
     ).resolves.toStrictEqual({
       destDir: `${path.resolve("./htdocs/img/")}`,
       convertedFile: `${path.resolve("./htdocs/img/**/*.webp")}`,
@@ -27,23 +27,23 @@ describe("outer", () => {
       excludeFileNames: ["apple-touch-icon.png"],
       excludeDirNames: ["ignore/test", "ignore2"],
       webpConverterOption: "-q 75",
-      webpConverterGifOption: "-q 90 -m 5 -mt"
+      webpConverterGifOption: "-q 90 -m 5 -mt",
     });
   });
 
   test("valid optional config3", async () => {
-    await expect(setConfig(getConfig("src/tests/test"))).resolves.toStrictEqual(
-      {
-        destDir: `${path.resolve("./test/img/")}`,
-        convertedFile: `${path.resolve("./test/img/**/*.webp")}`,
-        originalDir: `${path.resolve("./test2/img/")}`,
-        targetExt: ".+(jpg|png|gif)",
-        excludeFileNames: [],
-        excludeDirNames: [],
-        webpConverterOption: "-q 85",
-        webpConverterGifOption: "-q 85"
-      }
-    );
+    await expect(
+      setConfig(getConfig("src/configTests/test"))
+    ).resolves.toStrictEqual({
+      destDir: `${path.resolve("./test/img/")}`,
+      convertedFile: `${path.resolve("./test/img/**/*.webp")}`,
+      originalDir: `${path.resolve("./test2/img/")}`,
+      targetExt: ".+(jpg|png|gif)",
+      excludeFileNames: [],
+      excludeDirNames: [],
+      webpConverterOption: "-q 85",
+      webpConverterGifOption: "-q 85",
+    });
   });
 
   test("invalid config filename", async () => {
@@ -57,7 +57,7 @@ describe("outer", () => {
       excludeFileNames: ["apple-touch-icon.png"],
       excludeDirNames: [],
       webpConverterOption: "-q 85",
-      webpConverterGifOption: "-q 85"
+      webpConverterGifOption: "-q 85",
     });
   });
 });

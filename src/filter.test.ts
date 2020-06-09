@@ -1,6 +1,6 @@
-import getConfig from "../getConfig";
-import setConfig from "../setConfig";
-import { isTargetFile } from "../filter";
+import getConfig from "./getConfig";
+import setConfig from "./setConfig";
+import { isTargetFile } from "./filter";
 
 describe("outer", () => {
   test("valid target", async () => {
@@ -28,7 +28,7 @@ describe("outer", () => {
   });
 
   test("hit directory blacklist", async () => {
-    const config = await setConfig(getConfig("src/tests/test2"));
+    const config = await setConfig(getConfig("src/configTests/test2"));
     await expect(
       await isTargetFile(
         `${config.originalDir}/ignore/test/*${config.targetExt}`,
