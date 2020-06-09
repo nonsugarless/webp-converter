@@ -1,11 +1,4 @@
-import convertAll from "./convertAll";
-import watch from "./watch";
-import clean from "./clean";
-import cleanAll from "./cleanAll";
-
-module.exports = {
-  convert: convertAll(),
-  watch: watch(),
-  clean: clean(),
-  cleanAll: cleanAll(),
-};
+export * as convertAll from "./convertAll";
+export * as watch from "./watch";
+export * as clean from "./clean";
+export * as cleanAll from "./cleanAll";
