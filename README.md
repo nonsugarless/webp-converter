@@ -46,7 +46,7 @@ Delete *all* WebP Images from `destDir`
 |`webpConverterGifOption` |"-q 85"                  |[Gif WebP convert options](https://developers.google.com/speed/webp/docs/cwebp#options)                                 |
 
 # Optional configuration
-You can use an optional configuration `.webpconverter` file in JSON or YAML format or `webpconverter.config.js` file exporting a JS object by setting it project root directory.
+You can use an optional configuration `.webpconverterrc` file in JSON or YAML format or `webpconverter.config.js` file exporting a JS object by setting it project root directory.
 ```bash
 {
 	"destDir": "./dest/img/",
