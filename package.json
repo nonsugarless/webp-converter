@@ -1,6 +1,6 @@
 {
   "name": "@nonsugarless/webp-converter",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Genki Sato",
   "bin": {
     "webp-cli": "./bin/cli.js"
