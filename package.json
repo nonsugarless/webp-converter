@@ -28,8 +28,9 @@
   "files": [
     "README.md",
     "package.json",
-    "/bin/",
-    "!/bin/tests/"
+    "/bin/*.js",
+    "/bin/*.d.ts",
+    "!/bin/*.test.**"
   ],
   "jest": {
     "moduleFileExtensions": [
