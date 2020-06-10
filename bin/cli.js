@@ -31,22 +31,29 @@ const arrayGetKeys = (array) => {
     }
     return keys;
 };
-if (inputOption) {
-    const definedOption = () => declaredOptions[inputAction].option;
-    const targetAction = definedOption()
-        ? definedOption().filter((key) => key[inputOption])
-        : null;
-    if (targetAction && targetAction.length) {
-        targetAction[0][inputOption]();
-    }
-    else {
-        const message = definedOption()
-            ? `There is no option '${inputOption}' in command '${inputAction}'. You can use the following options. ${arrayGetKeys(declaredOptions[inputAction].option)}`
-            : `command '${inputAction}' has no options.`;
-        console.log(message);
-    }
+const actionKeys = Object.keys(declaredOptions);
+const isMatchAction = actionKeys.filter((key) => key === inputAction).length;
+if (!isMatchAction) {
+    console.log(`There is no command '${inputAction}'. You can use the following command -- ${actionKeys}`);
 }
 else {
-    declaredOptions[inputAction].action();
+    if (inputOption) {
+        const definedOption = () => declaredOptions[inputAction].option;
+        const targetAction = definedOption()
+            ? definedOption().filter((key) => key[inputOption])
+            : null;
+        if (targetAction && targetAction.length) {
+            targetAction[0][inputOption]();
+        }
+        else {
+            const message = definedOption()
+                ? `There is no option '${inputOption}' in command '${inputAction}'. You can use the following options -- ${arrayGetKeys(declaredOptions[inputAction].option)}`
+                : `command '${inputAction}' has no options.`;
+            console.log(message);
+        }
+    }
+    else {
+        declaredOptions[inputAction].action();
+    }
 }
-//# sourceMappingURL=main.js.map
+//# sourceMappingURL=cli.js.map
