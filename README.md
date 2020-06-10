@@ -8,7 +8,11 @@ You can convert images to WebP Images and delete unnecessary WebP Images automat
 
 # Installation
 ```bash
-npm install @nonsugarless/webp-converter
+yarn add -D @nonsugarless/webp-converter
+```
+or
+```bash
+npm install --save-dev @nonsugarless/webp-converter
 ```
 # Usage
 ## Convert all images
@@ -43,10 +47,10 @@ Delete *all* WebP Images from `destDir`
 |`excludeFileNames`       |["apple-touch-icon.png"] |Array of filenames that you don't want to convert                                                                        |
 |`excludeDirNames`        |[]                       |Array of relative path from `originalDir` that you don't want to convert                                                |
 |`webpConverterOption`    |"-q 85"                  |[WebP convert options](https://developers.google.com/speed/webp/docs/cwebp#options)                                     |
-|`webpConverterGifOption` |"-q 85"                  |[Gif WebP convert options](https://developers.google.com/speed/webp/docs/cwebp#options)                                 |
+|`webpConverterGifOption` |"-q 85"                  |[Gif WebP convert options](https://developers.google.com/speed/webp/docs/gif2webp#options)                                 |
 
 # Optional configuration
-You can use an optional configuration `.webpconverterrc` file in JSON or YAML format or `webpconverter.config.js` file exporting a JS object by setting it project root directory.
+You can use an optional configuration `.webpconverterrc` file in JSON or YAML format or `webpconverter.config.js` file exporting a JS object by setting it project root directory. See [cosmiconfig](https://github.com/davidtheclark/cosmiconfig#readme) docs for more details.
 ```bash
 {
 	"destDir": "./dest/img/",
@@ -58,6 +62,16 @@ You can use an optional configuration `.webpconverterrc` file in JSON or YAML fo
 	"webpConverterGifOption": "-q 90 -m 5 -mt"
 }
 ```
+
+# API
+
+Also you can use this package as functions.
+ ```
+import { convertAll, watch, clean, cleanAll } from '@nonsugarless/webp-converter';
+
+convertAll();
+```
+It will be applied your configuration.
 
 # License
 [MIT](https://en.wikipedia.org/wiki/MIT_License)
