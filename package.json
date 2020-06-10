@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "Genki Sato",
   "bin": {
-    "webp-cli": "./bin/main.js"
+    "webp-cli": "./bin/cli.js"
   },
   "bugs": {
     "url": "https://github.com/nonsugarless/webp-converter"
@@ -49,7 +49,7 @@
     ]
   },
   "license": "MIT",
-  "main": "./bin/main.js",
+  "main": "./bin/index.js",
   "private": false,
   "repository": {
     "type": "git",
@@ -63,7 +63,7 @@
     "dev": "tsc -w",
     "test": "jest"
   },
-  "types": "./bin/main.d.ts",
+  "types": "./bin/index.d.ts",
   "description": "\"@nonsugarless/webp-converter\" is the wrapper of [webp-converter](https://www.npmjs.com/package/webp-converter) that allows you convert and delete WebP Images more easily.",
   "homepage": "https://github.com/nonsugarless/webp-converter#readme",
   "keywords": [
