@@ -65,7 +65,7 @@ You can use an optional configuration `.webpconverterrc` file in JSON or YAML fo
 
 # API
 
-Also you can use this package as functions.
+Also you can use this as Node.js functions.
  ```
 import { convertAll, watch, clean, cleanAll } from '@nonsugarless/webp-converter';
 
