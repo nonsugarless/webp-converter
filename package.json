@@ -12,7 +12,7 @@
     "chokidar": "^3.3.1",
     "cosmiconfig": "^6.0.0",
     "glob": "^7.1.6",
-    "webp-converter": "^2.2.3"
+    "webp-converter": "2.2.3"
   },
   "devDependencies": {
     "@types/glob": "^7.1.1",
